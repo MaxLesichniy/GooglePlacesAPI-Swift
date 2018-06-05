@@ -21,6 +21,7 @@ struct GPResponse: Codable {
     enum CodingKeys: String, CodingKey {
         case errorMessage = "error_message"
         case results = "results"
+        case result = "result"
         case predictions = "predictions"
         case htmlAttributions = "html_attributions"
         case status = "status"
@@ -29,6 +30,7 @@ struct GPResponse: Codable {
     
     // MARK: Properties
     let results: [GPPlace]?
+    let result: GPPlace?
     let predictions: [GPPrediction]?
     let htmlAttributions: [String]?
     let status: Status

@@ -11,8 +11,8 @@ import Foundation
 public struct GPPrediction: Codable {
     
     public struct MatchedSubstring: Codable {
-        public var offset: Int?
-        public var length: Int?
+        public var offset: Int
+        public var length: Int
     }
     
     public struct StructuredFormatting: Codable {

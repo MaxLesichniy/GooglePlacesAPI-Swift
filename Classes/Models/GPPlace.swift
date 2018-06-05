@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 public class GPPlace: NSObject, Codable {
     
@@ -25,13 +26,18 @@ public class GPPlace: NSObject, Codable {
 //        case altIds = "alt_ids"
     }
     
+    public init(placeId: String, coordinate: CLLocationCoordinate2D) {
+        self.placeId = placeId
+        self.geometry = GPGeometry(coordinate: coordinate)
+    }
+    
     // MARK: Properties
     public var geometry: GPGeometry?
     public var icon: String?
     public var reference: String?
     public var name: String?
 //    public var openingHours: GPOpeningHours?
-    public var types: [String]?
+    public var types: [String] = []
     public var placeId: String = ""
 //    public var photos: [GPPhotos]?
     public var scope: String?
